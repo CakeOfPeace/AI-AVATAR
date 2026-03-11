@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+}
+
+body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  .avatar-container video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+}
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+  .glass-subtle {
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoom-in-95 {
+  from { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
+
+@keyframes slide-in-from-bottom-5 {
+  from { transform: translateY(1.25rem); }
+  to { transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fade-in 150ms ease-out, zoom-in-95 150ms ease-out;
+}
+
+.fade-in-0 {
+  animation: fade-in 150ms ease-out;
+  }
+
+.zoom-in-95 {
+  animation: zoom-in-95 150ms ease-out;
+  }
+
+.slide-in-from-bottom-5 {
+  animation: slide-in-from-bottom-5 200ms ease-out;
+}
